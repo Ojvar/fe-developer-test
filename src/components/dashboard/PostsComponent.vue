@@ -5,8 +5,8 @@
         <div v-if="!hasPosts">
             <h5>No any Todo registered</h5>
         </div>
-        <div v-if="hasPosts" class="row justify-content-center">
-            <post-component class="col-6" v-for="post in postsList" :key="post.id"
+        <div v-if="hasPosts" class="row justify-content-around">
+            <post-component class="col-5" v-for="post in postsList" :key="post.id"
                 :model-value="post"></post-component>
         </div>
     </div>

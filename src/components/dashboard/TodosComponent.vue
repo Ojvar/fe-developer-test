@@ -5,8 +5,8 @@
         <div v-if="!hasTodos">
             <h5 class="text-center">No any Todo registered</h5>
         </div>
-        <div v-if="hasTodos" class="row justify-content-center">
-            <todo-component class="col-6" v-for="todo in todosList" :key="todo.id"
+        <div v-if="hasTodos" class="row justify-content-around">
+            <todo-component class="col-5" v-for="todo in todosList" :key="todo.id"
                 :model-value="todo"></todo-component>
         </div>
     </div>
