@@ -5,8 +5,8 @@
         <div v-if="!hasTodos">
             <h5 class="text-center">No any Todo registered</h5>
         </div>
-        <div v-if="hasTodos" class="row gap-1 justify-content-center">
-            <todo-component class="col-3 m-0 p-0" v-for="todo in todosList" :key="todo.id"
+        <div v-if="hasTodos" class="row justify-content-center">
+            <todo-component class="col-6" v-for="todo in todosList" :key="todo.id"
                 :model-value="todo"></todo-component>
         </div>
     </div>
@@ -28,7 +28,8 @@ const hasTodos = computed(() => todosList.value.length !== 0)
 
 // Functions
 const loadTodosList = async () => {
-    todosList.value = await todosService.loadTodos();
+    const value = await todosService.loadTodos();
+    todosList.value = value.slice(0, 2)
 }
 
 // Hooks

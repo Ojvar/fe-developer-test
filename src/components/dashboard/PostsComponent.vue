@@ -6,7 +6,7 @@
             <h5>No any Todo registered</h5>
         </div>
         <div v-if="hasPosts" class="row justify-content-center">
-            <post-component class="col-12 m-2" v-for="post in postsList" :key="post.id"
+            <post-component class="col-6" v-for="post in postsList" :key="post.id"
                 :model-value="post"></post-component>
         </div>
     </div>
@@ -29,7 +29,8 @@ const hasPosts = computed(() => postsList.value.length !== 0)
 // Functions
 const loadPostsList = async () => {
     const list = await postsService.loadPosts();
-    postsList.value = list.sort((a, b) => b.id - a.id);
+    // postsList.value = list.sort((a, b) => b.id - a.id).slice;
+    postsList.value = list.slice(0, 2);
 }
 
 // Hooks
