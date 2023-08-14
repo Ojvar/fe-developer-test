@@ -1,9 +1,13 @@
 <template>
-    <div class="todo">
-        <h5>{{ modelValue.title }}</h5>
-        <div>Id: {{ modelValue.id }}</div>
-        <div>User Id: {{ modelValue.user_id }}</div>
-        <div>Status: {{ modelValue.user_id }} </div>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title text-start">{{ modelValue.title }}</h5>
+            <div class="card-text text-start">
+                <div>Id: {{ modelValue.id }}</div>
+                <div>User Id: {{ modelValue.user_id }}</div>
+                <div>Status: {{ modelValue.status }} </div>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -11,17 +15,9 @@
 <script setup lang="ts">
 import { ITodo } from '../../models';
 
-export interface IProps {
+interface IProps {
     modelValue: ITodo
 }
 
 defineProps<IProps>();
 </script>
-
-<style lang="scss" scoped>
-.todo {
-    text-align: left;
-    padding: 0.0rem;
-    margin-bottom: 2rem;
-}
-</style>

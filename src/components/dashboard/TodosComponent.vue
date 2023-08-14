@@ -1,12 +1,13 @@
 <template>
-    <div class="main-container">
-        <h3>My Todo's</h3>
+    <div class="mb-5">
+        <h3 class="text-start">My Todo's</h3>
 
         <div v-if="!hasTodos">
-            <h5>No any Todo registered</h5>
+            <h5 class="text-center">No any Todo registered</h5>
         </div>
-        <div v-if="hasTodos" class="todos">
-            <todo-component class="todo" v-for="todo in todosList" :key="todo.id" :model-value="todo"></todo-component>
+        <div v-if="hasTodos" class="row gap-1 justify-content-center">
+            <todo-component class="col-3 m-0 p-0" v-for="todo in todosList" :key="todo.id"
+                :model-value="todo"></todo-component>
         </div>
     </div>
 </template>
@@ -35,22 +36,3 @@ onMounted(() => {
     loadTodosList();
 })
 </script>
-
-<style lang="scss" scoped>
-.main-container {
-    text-align: left;
-}
-
-.todos {
-    display: flex;
-    justify-content: space-between;
-
-    & .todo {
-        flex: 1 1 0px;
-        border: 1px solid gray;
-        border-radius: .4rem;
-        padding: 1rem;
-        margin: .5rem;
-    }
-}
-</style>

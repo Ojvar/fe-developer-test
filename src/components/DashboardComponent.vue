@@ -1,7 +1,7 @@
 <template>
-  <h1>My Dashboard</h1>
-  <todos-component></todos-component>
+  <h1 class="text-center mb-5">My Dashboard</h1>
   <posts-component></posts-component>
+  <todos-component></todos-component>
 </template>
 
 <script setup lang="ts">
