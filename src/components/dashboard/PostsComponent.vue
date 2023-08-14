@@ -1,9 +1,9 @@
 <template>
   <div class="mb-5">
-    <h3 class="text-start">My Todo's</h3>
+    <h3 class="text-start">Latest Posts</h3>
 
     <div v-if="!hasPosts">
-      <h5 class="text-center">No any Todo registered</h5>
+      <h5 class="text-center">No any Post registered</h5>
     </div>
     <div v-if="hasPosts" class="row justify-content-around">
       <post-component
